@@ -1,0 +1,25 @@
+[[ADMIXTURE]]
+arch = "x86_64"
+git-tree-sha1 = "316b9c66aef8f67001d54aa86a244d1e769c1e1a"
+os = "linux"
+
+    [[ADMIXTURE.download]]
+    sha256 = "353e8b170c81f8d95946bf18bc78afda5d6bd32645b2a68658bd6781ff35703c"
+    url = "http://dalexander.github.io/admixture/binaries/admixture_linux-1.3.0.tar.gz"
+
+[[ADMIXTURE]]
+arch = "x86_64"
+git-tree-sha1 = "7d0732a6f20d0cf8c106525a4602fc824e4cff31"
+os = "macos"
+
+    [[ADMIXTURE.download]]
+    sha256 = "20573453d788e33c01a2756bd9200fd146adf8918b9bb4013d307055926331fc"
+    url = "http://dalexander.github.io/admixture/binaries/admixture_macosx-1.3.0.tar.gz"
+
+[HAPMAP3]
+git-tree-sha1 = "1d6f0b5987c011cad6d70b1f9733cdadbb31cd6d"
+
+    [[HAPMAP3.download]]
+    sha256 = "52cd180d052a123294a0319c0476c4cc2addbf289c85fe4093282b66e927e040"
+    url = "http://dalexander.github.io/admixture/hapmap3-files.tar.gz"
+

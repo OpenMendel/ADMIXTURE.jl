@@ -211,7 +211,7 @@ Q
 
 
 
-The output files of ADMIXTURE are available in the working directoryl
+The output files of ADMIXTURE are available in the working directory.
 
 
 ```julia
@@ -247,8 +247,7 @@ The methodology is described in following papers. Please cite if you ADMIXTURE o
 
 1. D Alexander, J Novembre, and K Lange. (2009) Fast model-based estimation of ancestry in unrelated individuals, _Genome Research_, 19(9):1655–1664. <https://dx.doi.org/10.1101/gr.094052.109>  
 
-2. D Alexander and K Lange. (2011) Enhancements to the ADMIXTURE algorithm for individual
-ancestry estimation. _BMC Bioinformatics_, 12:246. <https://doi.org/10.1186/1471-2105-12-246>  
+2. D Alexander and K Lange. (2011) Enhancements to the ADMIXTURE algorithm for individual ancestry estimation. _BMC Bioinformatics_, 12:246. <https://doi.org/10.1186/1471-2105-12-246>  
 
 3. S Shringarpure, C Bustamante, K Lange, and D Alexander. (2016) Efficient analysis of large datasets and sex bias with ADMIXTURE. _BMC Bioinformatics_ 17:218. <https://doi.org/10.1186/s12859-016-1082-x>
 

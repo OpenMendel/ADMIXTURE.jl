@@ -1,6 +1,12 @@
 module PkgTest
 
-using ADMIXTURE, Test
+using ADMIXTURE, Tar, Test
+
+@info "Download HAPMAP3 data"
+download("http://dalexander.github.io/admixture/hapmap3-files.tar.gz", 
+         joinpath(pwd(), "hapmap3.tar"))
+Tar.extract("hapmap3.tar", joinpath(pwd(), "hapmap3"))
+HAPMAP3_FILE = "hapmap3/hapmap3"
 
 @testset "help" begin
 run(`$ADMIXTURE_EXE --help`)
@@ -51,5 +57,9 @@ qfile = "hapmap3.$k.Q.lambda.$l"
 rm(qfile, force = true)
 rm(pfile, force = true)
 end
+
+@info "Clean up HAPMAP3 data"
+rm("hapmap3.tar", force = true)
+rm("hapmap3", recursive = true)
 
 end # module PkgTest

@@ -2,7 +2,7 @@ module ADMIXTURE
 
 using DelimitedFiles, Glob, Pkg.Artifacts
 
-export ADMIXTURE_EXE, HAPMAP3_FILE
+export ADMIXTURE_EXE
 export admixture, read_PQ
 
 if Sys.isapple()
@@ -12,7 +12,6 @@ elseif Sys.islinux()
 else
     error("ADMIXTURE only supports Linux and MacOS")
 end
-HAPMAP3_FILE = joinpath(artifact"HAPMAP3", "hapmap3")
 
 """
     admixture(inputFile, K; kwargs...)

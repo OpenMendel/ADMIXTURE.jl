@@ -13,8 +13,12 @@ if admixture_hash === nothing || !artifact_exists(admixture_hash)
     admixture_hash = create_artifact() do artifact_dir
         # We create the artifact by simply downloading and unpack tar ball into the new artifact directory
         tarball = download("http://dalexander.github.io/admixture/binaries/admixture_linux-1.3.0.tar.gz")
+        @show open(tarball) do f
+            sha2_256(f) |> bytes2hex
+        end
         try
             global tarball_hash = bytes2hex(GitTools.blob_hash(tarball))
+            @show tarball_hash
             unpack(tarball, artifact_dir)
         finally
             rm(tarball)

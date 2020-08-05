@@ -12,7 +12,7 @@ git:
   depth: 99999999
 
 after_script:
-  - julia -e 'using Pkg, Admixture; cd(joinpath(dirname(pathof(Admixture)), "..")); Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder()); Coveralls.submit(process_folder())'
+  - julia -e 'using Pkg, ADMIXTURE; cd(joinpath(dirname(pathof(ADMIXTURE)), "..")); Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder()); Coveralls.submit(process_folder())'
 
 jobs:
   allow_failures:
@@ -23,7 +23,7 @@ jobs:
       os: linux
       script:
         - julia -e 'using Pkg; Pkg.add("Documenter")'
-        - julia -e 'using Admixture; include(joinpath(dirname(pathof(Admixture)), "..", "docs", "make.jl"))'
+        - julia -e 'using ADMIXTURE; include(joinpath(dirname(pathof(ADMIXTURE)), "..", "docs", "make.jl"))'
       after_script: skip
       after_success: skip  
       

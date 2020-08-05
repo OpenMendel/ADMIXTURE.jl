@@ -7,7 +7,7 @@
 
 ADMIXTURE.jl is a Julia wrapper of the popular [ADMIXTURE program](http://dalexander.github.io/admixture/) for estimating ancestry in a model-based manner from large autosomal SNP genotype data sets. 
 
-The method is described in following papers:  
+The methodology is described in following papers:  
 
 1. D Alexander, J Novembre, and K Lange. (2009) Fast model-based estimation of ancestry in unrelated individuals, _Genome Research_, 19(9):1655–1664. <https://dx.doi.org/10.1101/gr.094052.109>  
 
@@ -20,6 +20,7 @@ ADMIXTURE.jl requires Julia v1.3 or later. See documentation for usage. It is no
 ```{julia}
 (@v1.5) Pkg> add https://github.com/OpenMendel/ADMIXTURE.jl
 ```
+The original ADMIXTURE software thus ADMIXTURE.jl only support Linux and MacOS.
 
 As a quick example, suppose a set of PLINK files `hapmap3.bed`, `hapmap3.bim`, `hapmap3.fam` are available in the current directory. Then
 ```julia

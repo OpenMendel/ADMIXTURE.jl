@@ -10,7 +10,7 @@ Platform Info:
 Environment:
   JULIA_EDITOR = code
   JULIA_NUM_THREADS = 4</code></pre><pre><code class="language-julia"># for use in this tutorial
-using ADMIXTURE, Glob, Tar</code></pre><h2 id="Quick-example"><a class="docs-heading-anchor" href="#Quick-example">Quick example</a><a id="Quick-example-1"></a><a class="docs-heading-anchor-permalink" href="#Quick-example" title="Permalink"></a></h2><p>ADMIXTURE.jl only exports one function <code>admixture</code>. The usage resembles the original ADMIXTURE software. </p><p>Let&#39;s first download a sample data set (in PLINK binary format) to the <code>/hapmap3</code> folder.</p><pre><code class="language-julia">isfile(&quot;hapmap3.tar&quot;) || 
+using ADMIXTURE, DelimitedFiles, Glob, Tar</code></pre><h2 id="Quick-example"><a class="docs-heading-anchor" href="#Quick-example">Quick example</a><a id="Quick-example-1"></a><a class="docs-heading-anchor-permalink" href="#Quick-example" title="Permalink"></a></h2><p>ADMIXTURE.jl only exports one function <code>admixture</code>. The usage resembles the original ADMIXTURE software. </p><p>Let&#39;s first download a sample data set (in PLINK binary format) to the <code>/hapmap3</code> folder.</p><pre><code class="language-julia">isfile(&quot;hapmap3.tar&quot;) || 
 download(&quot;http://dalexander.github.io/admixture/hapmap3-files.tar.gz&quot;, 
          joinpath(pwd(), &quot;hapmap3.tar&quot;))
 isdir(&quot;hapmap3&quot;) ||
@@ -43,36 +43,36 @@ Estimation of standard errors disabled; will compute point estimates only.
 
 Size of G: 324x13928
 Performing five EM steps to prime main algorithm
-1 (EM) 	Elapsed: 0.334	Loglikelihood: -4.38757e+06	(delta): 2.87325e+06
-2 (EM) 	Elapsed: 0.358	Loglikelihood: -4.25681e+06	(delta): 130762
-3 (EM) 	Elapsed: 0.375	Loglikelihood: -4.21622e+06	(delta): 40582.9
-4 (EM) 	Elapsed: 0.363	Loglikelihood: -4.19347e+06	(delta): 22748.2
-5 (EM) 	Elapsed: 0.333	Loglikelihood: -4.17881e+06	(delta): 14663.1
+1 (EM) 	Elapsed: 0.239	Loglikelihood: -4.38757e+06	(delta): 2.87325e+06
+2 (EM) 	Elapsed: 0.239	Loglikelihood: -4.25681e+06	(delta): 130762
+3 (EM) 	Elapsed: 0.239	Loglikelihood: -4.21622e+06	(delta): 40582.9
+4 (EM) 	Elapsed: 0.238	Loglikelihood: -4.19347e+06	(delta): 22748.2
+5 (EM) 	Elapsed: 0.238	Loglikelihood: -4.17881e+06	(delta): 14663.1
 Initial loglikelihood: -4.17881e+06
 Starting main algorithm
-1 (QN/Block) 	Elapsed: 0.711	Loglikelihood: -3.94775e+06	(delta): 231058
-2 (QN/Block) 	Elapsed: 0.712	Loglikelihood: -3.8802e+06	(delta): 67554.6
-3 (QN/Block) 	Elapsed: 0.667	Loglikelihood: -3.83232e+06	(delta): 47883.8
-4 (QN/Block) 	Elapsed: 0.94	Loglikelihood: -3.81118e+06	(delta): 21138.2
-5 (QN/Block) 	Elapsed: 0.816	Loglikelihood: -3.80682e+06	(delta): 4354.36
-6 (QN/Block) 	Elapsed: 0.811	Loglikelihood: -3.80474e+06	(delta): 2085.65
-7 (QN/Block) 	Elapsed: 0.79	Loglikelihood: -3.80362e+06	(delta): 1112.58
-8 (QN/Block) 	Elapsed: 0.857	Loglikelihood: -3.80276e+06	(delta): 865.01
-9 (QN/Block) 	Elapsed: 0.819	Loglikelihood: -3.80209e+06	(delta): 666.662
-10 (QN/Block) 	Elapsed: 0.958	Loglikelihood: -3.80151e+06	(delta): 579.49
-11 (QN/Block) 	Elapsed: 0.808	Loglikelihood: -3.80097e+06	(delta): 548.156
-12 (QN/Block) 	Elapsed: 0.872	Loglikelihood: -3.80049e+06	(delta): 473.565
-13 (QN/Block) 	Elapsed: 0.778	Loglikelihood: -3.80023e+06	(delta): 258.61
-14 (QN/Block) 	Elapsed: 0.883	Loglikelihood: -3.80005e+06	(delta): 179.949
-15 (QN/Block) 	Elapsed: 0.915	Loglikelihood: -3.79991e+06	(delta): 146.707
-16 (QN/Block) 	Elapsed: 0.825	Loglikelihood: -3.79989e+06	(delta): 13.1942
-17 (QN/Block) 	Elapsed: 0.951	Loglikelihood: -3.79989e+06	(delta): 4.60747
-18 (QN/Block) 	Elapsed: 0.754	Loglikelihood: -3.79989e+06	(delta): 1.50012
-19 (QN/Block) 	Elapsed: 0.777	Loglikelihood: -3.79989e+06	(delta): 0.128916
-20 (QN/Block) 	Elapsed: 0.768	Loglikelihood: -3.79989e+06	(delta): 0.00182983
-21 (QN/Block) 	Elapsed: 0.774	Loglikelihood: -3.79989e+06	(delta): 4.33787e-05
+1 (QN/Block) 	Elapsed: 0.493	Loglikelihood: -3.94775e+06	(delta): 231058
+2 (QN/Block) 	Elapsed: 0.5	Loglikelihood: -3.8802e+06	(delta): 67554.6
+3 (QN/Block) 	Elapsed: 0.574	Loglikelihood: -3.83232e+06	(delta): 47883.8
+4 (QN/Block) 	Elapsed: 0.672	Loglikelihood: -3.81118e+06	(delta): 21138.2
+5 (QN/Block) 	Elapsed: 0.611	Loglikelihood: -3.80682e+06	(delta): 4354.36
+6 (QN/Block) 	Elapsed: 0.568	Loglikelihood: -3.80474e+06	(delta): 2085.65
+7 (QN/Block) 	Elapsed: 0.582	Loglikelihood: -3.80362e+06	(delta): 1112.58
+8 (QN/Block) 	Elapsed: 0.61	Loglikelihood: -3.80276e+06	(delta): 865.01
+9 (QN/Block) 	Elapsed: 0.574	Loglikelihood: -3.80209e+06	(delta): 666.662
+10 (QN/Block) 	Elapsed: 0.679	Loglikelihood: -3.80151e+06	(delta): 579.49
+11 (QN/Block) 	Elapsed: 0.613	Loglikelihood: -3.80097e+06	(delta): 548.156
+12 (QN/Block) 	Elapsed: 0.648	Loglikelihood: -3.80049e+06	(delta): 473.565
+13 (QN/Block) 	Elapsed: 0.571	Loglikelihood: -3.80023e+06	(delta): 258.61
+14 (QN/Block) 	Elapsed: 0.643	Loglikelihood: -3.80005e+06	(delta): 179.949
+15 (QN/Block) 	Elapsed: 0.683	Loglikelihood: -3.79991e+06	(delta): 146.707
+16 (QN/Block) 	Elapsed: 0.625	Loglikelihood: -3.79989e+06	(delta): 13.1942
+17 (QN/Block) 	Elapsed: 0.681	Loglikelihood: -3.79989e+06	(delta): 4.60747
+18 (QN/Block) 	Elapsed: 0.585	Loglikelihood: -3.79989e+06	(delta): 1.50012
+19 (QN/Block) 	Elapsed: 0.583	Loglikelihood: -3.79989e+06	(delta): 0.128916
+20 (QN/Block) 	Elapsed: 0.578	Loglikelihood: -3.79989e+06	(delta): 0.00182983
+21 (QN/Block) 	Elapsed: 0.567	Loglikelihood: -3.79989e+06	(delta): 4.33787e-05
 Summary: 
-Converged in 21 iterations (20.351 sec)
+Converged in 21 iterations (14.858 sec)
 Loglikelihood: -3799887.171935
 Fst divergences between estimated populations: 
 	Pop0	Pop1	
@@ -133,8 +133,9 @@ Writing output files.</code></pre><p>The <code>P</code> matrix contains estimate
  1.0e-5    0.99998   1.0e-5
  0.004387  0.995603  1.0e-5</code></pre><p>The output files of ADMIXTURE are available in the working directory.</p><pre><code class="language-julia">readdir(glob&quot;hapmap3.3.*&quot;)</code></pre><pre><code class="language-none">2-element Array{String,1}:
  &quot;hapmap3.3.P&quot;
- &quot;hapmap3.3.Q&quot;</code></pre><h2 id="Detailed-options"><a class="docs-heading-anchor" href="#Detailed-options">Detailed options</a><a id="Detailed-options-1"></a><a class="docs-heading-anchor-permalink" href="#Detailed-options" title="Permalink"></a></h2><p>The <code>admixture</code> function wraps most options for running ADMIXTURE program. The keywords closely follow those of ADMIXTURE.</p><pre><code class="language-docs">admixture</code></pre><h2 id="Run-ADMIXTURE-directly"><a class="docs-heading-anchor" href="#Run-ADMIXTURE-directly">Run ADMIXTURE directly</a><a id="Run-ADMIXTURE-directly-1"></a><a class="docs-heading-anchor-permalink" href="#Run-ADMIXTURE-directly" title="Permalink"></a></h2><p>ADMIXTURE.jl exports <code>ADMIXTURE_EXE</code>, which points to the installed ADMIXTURE executable. Users can use it to run ADMIXTURE directly. For example,</p><pre><code class="language-julia">run(`$ADMIXTURE_EXE hapmap3/hapmap3.bed 3`)</code></pre><h2 id="References"><a class="docs-heading-anchor" href="#References">References</a><a id="References-1"></a><a class="docs-heading-anchor-permalink" href="#References" title="Permalink"></a></h2><p>The methodology is described in following papers. Please cite if you ADMIXTURE or ADMIXTURE.jl.</p><ol><li><p>D Alexander, J Novembre, and K Lange. (2009) Fast model-based estimation of ancestry in unrelated individuals, <em>Genome Research</em>, 19(9):1655–1664. <a href="https://dx.doi.org/10.1101/gr.094052.109">https://dx.doi.org/10.1101/gr.094052.109</a>  </p></li><li><p>D Alexander and K Lange. (2011) Enhancements to the ADMIXTURE algorithm for individual ancestry estimation. <em>BMC Bioinformatics</em>, 12:246. <a href="https://doi.org/10.1186/1471-2105-12-246">https://doi.org/10.1186/1471-2105-12-246</a>  </p></li><li><p>S Shringarpure, C Bustamante, K Lange, and D Alexander. (2016) Efficient analysis of large datasets and sex bias with ADMIXTURE. <em>BMC Bioinformatics</em> 17:218. <a href="https://doi.org/10.1186/s12859-016-1082-x">https://doi.org/10.1186/s12859-016-1082-x</a></p></li></ol><pre><code class="language-julia"># clean up the HAPMAP3 files
+ &quot;hapmap3.3.Q&quot;</code></pre><p>We can read the output files by</p><pre><code class="language-julia">P = readdlm(&quot;hapmap3.3.P&quot;, &#39; &#39;, Float64)
+Q = readdlm(&quot;hapmap3.3.Q&quot;, &#39; &#39;, Float64);</code></pre><h2 id="Detailed-options"><a class="docs-heading-anchor" href="#Detailed-options">Detailed options</a><a id="Detailed-options-1"></a><a class="docs-heading-anchor-permalink" href="#Detailed-options" title="Permalink"></a></h2><p>The <code>admixture</code> function wraps most options for running ADMIXTURE program. The keywords closely follow those of ADMIXTURE.</p><article class="docstring"><header><a class="docstring-binding" id="ADMIXTURE.admixture" href="#ADMIXTURE.admixture"><code>ADMIXTURE.admixture</code></a> — <span class="docstring-category">Function</span></header><section><div><pre><code class="language-julia">admixture(inputFile, K; kwargs...)</code></pre><p>Calculate the admixture estimates assuming <code>K</code> populations. Input file can be  <code>.bed</code> (together with <code>.bim</code>, binary PLINK format), <code>geno</code> (STRUCTURE format),  or <code>ped</code> (12-coding PLINK format). </p><p><strong>Keyword arguments</strong></p><ul><li><code>B</code>: compute standard errors by bootstrap; default is <code>nothing</code>.  </li><li><code>j</code>: number of threads to be used; default is <code>nothing</code>.</li><li><code>s</code>: random seed; integer or <code>:time</code>; default is <code>nothing</code>. </li><li><code>C</code>: major convergence criterion; float or integer; default is <code>nothing</code>. </li><li><code>c</code>: minor convergence criterion; float or integer; default is <code>nothing</code>.</li><li><code>qn</code>: secant pairs to be used in quasi-Newton acceleration; default is 3.</li><li><code>l</code>: tuning parameter in penalized estimation.</li><li><code>e</code>: tuning parameter in penalized estimation.</li></ul></div><a class="docs-sourcelink" target="_blank" href="https://github.com/OpenMendel/ADMIXTURE.jl/blob/417043ef7e14ddc018798c25c5bf2f40b4146721/src/ADMIXTURE.jl#L16-L32">source</a></section></article><h2 id="Run-ADMIXTURE-directly"><a class="docs-heading-anchor" href="#Run-ADMIXTURE-directly">Run ADMIXTURE directly</a><a id="Run-ADMIXTURE-directly-1"></a><a class="docs-heading-anchor-permalink" href="#Run-ADMIXTURE-directly" title="Permalink"></a></h2><p>ADMIXTURE.jl exports <code>ADMIXTURE_EXE</code>, which points to the installed ADMIXTURE executable. Users can use it to run ADMIXTURE directly. For example,</p><pre><code class="language-julia">run(`$ADMIXTURE_EXE hapmap3/hapmap3.bed 3`)</code></pre><h2 id="References"><a class="docs-heading-anchor" href="#References">References</a><a id="References-1"></a><a class="docs-heading-anchor-permalink" href="#References" title="Permalink"></a></h2><p>The methodology is described in following papers. Please cite if you use ADMIXTURE or ADMIXTURE.jl.</p><ol><li><p>D Alexander, J Novembre, and K Lange. (2009) Fast model-based estimation of ancestry in unrelated individuals, <em>Genome Research</em>, 19(9):1655–1664. <a href="https://dx.doi.org/10.1101/gr.094052.109">https://dx.doi.org/10.1101/gr.094052.109</a>  </p></li><li><p>D Alexander and K Lange. (2011) Enhancements to the ADMIXTURE algorithm for individual ancestry estimation. <em>BMC Bioinformatics</em>, 12:246. <a href="https://doi.org/10.1186/1471-2105-12-246">https://doi.org/10.1186/1471-2105-12-246</a>  </p></li><li><p>S Shringarpure, C Bustamante, K Lange, and D Alexander. (2016) Efficient analysis of large datasets and sex bias with ADMIXTURE. <em>BMC Bioinformatics</em> 17:218. <a href="https://doi.org/10.1186/s12859-016-1082-x">https://doi.org/10.1186/s12859-016-1082-x</a></p></li></ol><pre><code class="language-julia"># clean up the HAPMAP3 files
 rm(&quot;hapmap3.3.P&quot;, force = true)
 rm(&quot;hapmap3.3.Q&quot;, force = true)
 rm(&quot;hapmap3.tar&quot;, force = true)
-rm(&quot;hapmap3&quot;, recursive = true)</code></pre></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Wednesday 5 August 2020 06:31">Wednesday 5 August 2020</span>. Using Julia version 1.5.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+rm(&quot;hapmap3&quot;, recursive = true)</code></pre></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Wednesday 5 August 2020 15:38">Wednesday 5 August 2020</span>. Using Julia version 1.5.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

@@ -1,7 +1,7 @@
 name = "ADMIXTURE"
 uuid = "354e233f-a9b1-4b8f-922c-9a29fc289231"
 authors = ["Hua Zhou <huazhou@ucla.edu>"]
-version = "0.0.1"
+version = "0.0.2"
 
 [deps]
 DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"

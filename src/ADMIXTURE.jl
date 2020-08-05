@@ -18,7 +18,9 @@ end
 
 Calculate the admixture estimates assuming `K` populations. Input file can be 
 `.bed` (together with `.bim`, binary PLINK format), `geno` (STRUCTURE format), 
-or `ped` (12-coding PLINK format). 
+or `ped` (12-coding PLINK format). The keyword arguments match those of 
+ADMIXTURE software. For details, see the ADMIXTUR manual 
+<http://dalexander.github.io/admixture/admixture-manual.pdf>
 
 # Keyword arguments
 - `B`: compute standard errors by bootstrap; default is `nothing`.  
@@ -27,8 +29,8 @@ or `ped` (12-coding PLINK format).
 - `C`: major convergence criterion; float or integer; default is `nothing`. 
 - `c`: minor convergence criterion; float or integer; default is `nothing`.
 - `qn`: secant pairs to be used in quasi-Newton acceleration; default is 3.
-- `l`: tuning parameter in penalized estimation.
-- `e`: tuning parameter in penalized estimation.
+- `l`: tuning parameter in penalized estimation; default is `nothing`.
+- `e`: tuning parameter in penalized estimation; default is `nothing`.
 """
 function admixture(
     inputFile :: AbstractString, 

@@ -237,7 +237,7 @@ Q = readdlm("hapmap3.3.Q", ' ', Float64);
 
 ## Detailed options
 
-The `admixture` function wraps most options for running ADMIXTURE program. The keywords closely follow those of ADMIXTURE.
+The `admixture` function wraps most options for running ADMIXTURE program. The keywords closely follow those of ADMIXTURE. For detailed options, see the [ADMIXTURE manual](http://dalexander.github.io/admixture/admixture-manual.pdf).
 ```@docs
 admixture
 ```

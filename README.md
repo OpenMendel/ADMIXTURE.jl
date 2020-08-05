@@ -2,7 +2,7 @@
 
 | **Documentation** | **Build Status** | **Code Coverage**  |
 |-------------------|------------------|--------------------|
-| [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://openmendel.github.io/ADMIXTURE.jl/stable) [![](https://img.shields.io/badge/docs-dev-blue.svg)](https://openmendel.github.io/ADMIXTURE.jl/dev/) | [![Build Status](https://travis-ci.org/github/OpenMendel/ADMIXTURE.jl.svg?branch=master)](https://travis-ci.org/github/OpenMendel/ADMIXTURE.jl)  | [![Coverage Status](https://coveralls.io/repos/github/OpenMendel/ADMIXTURE.jl/badge.svg?branch=master)](https://coveralls.io/github/OpenMendel/ADMIXTURE.jl?branch=master) [![codecov](https://codecov.io/gh/OpenMendel/ADMIXTURE.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/OpenMendel/ADMIXTURE.jl) |  
+| [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://openmendel.github.io/ADMIXTURE.jl/stable) [![](https://img.shields.io/badge/docs-dev-blue.svg)](https://openmendel.github.io/ADMIXTURE.jl/dev/) | [![Build Status](https://travis-ci.org/OpenMendel/ADMIXTURE.jl.svg?branch=master)](https://travis-ci.org/github/OpenMendel/ADMIXTURE.jl)  | [![Coverage Status](https://coveralls.io/repos/github/OpenMendel/ADMIXTURE.jl/badge.svg?branch=master)](https://coveralls.io/github/OpenMendel/ADMIXTURE.jl?branch=master) [![codecov](https://codecov.io/gh/OpenMendel/ADMIXTURE.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/OpenMendel/ADMIXTURE.jl) |  
 
 
 ADMIXTURE.jl is a Julia wrapper of the popular [ADMIXTURE program](http://dalexander.github.io/admixture/) for estimating ancestry in a model-based manner from large autosomal SNP genotype data sets. 

@@ -65,7 +65,7 @@ To estimate ancestry from $K=3$ populations, simply run
 
 
 ```julia
-P, Q = admixture("hapmap3/hapmap3.bed", 3)
+P, Q = admixture("hapmap3/hapmap3.bed", 3);
 ```
 
     ****                   ADMIXTURE Version 1.3.0                  ****
@@ -92,36 +92,36 @@ P, Q = admixture("hapmap3/hapmap3.bed", 3)
 
     Size of G: 324x13928
     Performing five EM steps to prime main algorithm
-    1 (EM) 	Elapsed: 0.325	Loglikelihood: -4.38757e+06	(delta): 2.87325e+06
-    2 (EM) 	Elapsed: 0.327	Loglikelihood: -4.25681e+06	(delta): 130762
-    3 (EM) 	Elapsed: 0.341	Loglikelihood: -4.21622e+06	(delta): 40582.9
-    4 (EM) 	Elapsed: 0.331	Loglikelihood: -4.19347e+06	(delta): 22748.2
-    5 (EM) 	Elapsed: 0.32	Loglikelihood: -4.17881e+06	(delta): 14663.1
+    1 (EM) 	Elapsed: 0.334	Loglikelihood: -4.38757e+06	(delta): 2.87325e+06
+    2 (EM) 	Elapsed: 0.358	Loglikelihood: -4.25681e+06	(delta): 130762
+    3 (EM) 	Elapsed: 0.375	Loglikelihood: -4.21622e+06	(delta): 40582.9
+    4 (EM) 	Elapsed: 0.363	Loglikelihood: -4.19347e+06	(delta): 22748.2
+    5 (EM) 	Elapsed: 0.333	Loglikelihood: -4.17881e+06	(delta): 14663.1
     Initial loglikelihood: -4.17881e+06
     Starting main algorithm
-    1 (QN/Block) 	Elapsed: 0.698	Loglikelihood: -3.94775e+06	(delta): 231058
-    2 (QN/Block) 	Elapsed: 0.702	Loglikelihood: -3.8802e+06	(delta): 67554.6
-    3 (QN/Block) 	Elapsed: 0.8	Loglikelihood: -3.83232e+06	(delta): 47883.8
-    4 (QN/Block) 	Elapsed: 0.976	Loglikelihood: -3.81118e+06	(delta): 21138.2
-    5 (QN/Block) 	Elapsed: 0.869	Loglikelihood: -3.80682e+06	(delta): 4354.36
-    6 (QN/Block) 	Elapsed: 0.837	Loglikelihood: -3.80474e+06	(delta): 2085.65
-    7 (QN/Block) 	Elapsed: 0.813	Loglikelihood: -3.80362e+06	(delta): 1112.58
-    8 (QN/Block) 	Elapsed: 0.875	Loglikelihood: -3.80276e+06	(delta): 865.01
-    9 (QN/Block) 	Elapsed: 0.769	Loglikelihood: -3.80209e+06	(delta): 666.662
-    10 (QN/Block) 	Elapsed: 0.936	Loglikelihood: -3.80151e+06	(delta): 579.49
-    11 (QN/Block) 	Elapsed: 0.841	Loglikelihood: -3.80097e+06	(delta): 548.156
-    12 (QN/Block) 	Elapsed: 0.917	Loglikelihood: -3.80049e+06	(delta): 473.565
-    13 (QN/Block) 	Elapsed: 0.799	Loglikelihood: -3.80023e+06	(delta): 258.61
-    14 (QN/Block) 	Elapsed: 1.03	Loglikelihood: -3.80005e+06	(delta): 179.949
-    15 (QN/Block) 	Elapsed: 0.951	Loglikelihood: -3.79991e+06	(delta): 146.707
-    16 (QN/Block) 	Elapsed: 0.836	Loglikelihood: -3.79989e+06	(delta): 13.1942
-    17 (QN/Block) 	Elapsed: 0.978	Loglikelihood: -3.79989e+06	(delta): 4.60747
-    18 (QN/Block) 	Elapsed: 0.86	Loglikelihood: -3.79989e+06	(delta): 1.50012
-    19 (QN/Block) 	Elapsed: 0.819	Loglikelihood: -3.79989e+06	(delta): 0.128916
-    20 (QN/Block) 	Elapsed: 0.85	Loglikelihood: -3.79989e+06	(delta): 0.00182983
-    21 (QN/Block) 	Elapsed: 0.9	Loglikelihood: -3.79989e+06	(delta): 4.33787e-05
+    1 (QN/Block) 	Elapsed: 0.711	Loglikelihood: -3.94775e+06	(delta): 231058
+    2 (QN/Block) 	Elapsed: 0.712	Loglikelihood: -3.8802e+06	(delta): 67554.6
+    3 (QN/Block) 	Elapsed: 0.667	Loglikelihood: -3.83232e+06	(delta): 47883.8
+    4 (QN/Block) 	Elapsed: 0.94	Loglikelihood: -3.81118e+06	(delta): 21138.2
+    5 (QN/Block) 	Elapsed: 0.816	Loglikelihood: -3.80682e+06	(delta): 4354.36
+    6 (QN/Block) 	Elapsed: 0.811	Loglikelihood: -3.80474e+06	(delta): 2085.65
+    7 (QN/Block) 	Elapsed: 0.79	Loglikelihood: -3.80362e+06	(delta): 1112.58
+    8 (QN/Block) 	Elapsed: 0.857	Loglikelihood: -3.80276e+06	(delta): 865.01
+    9 (QN/Block) 	Elapsed: 0.819	Loglikelihood: -3.80209e+06	(delta): 666.662
+    10 (QN/Block) 	Elapsed: 0.958	Loglikelihood: -3.80151e+06	(delta): 579.49
+    11 (QN/Block) 	Elapsed: 0.808	Loglikelihood: -3.80097e+06	(delta): 548.156
+    12 (QN/Block) 	Elapsed: 0.872	Loglikelihood: -3.80049e+06	(delta): 473.565
+    13 (QN/Block) 	Elapsed: 0.778	Loglikelihood: -3.80023e+06	(delta): 258.61
+    14 (QN/Block) 	Elapsed: 0.883	Loglikelihood: -3.80005e+06	(delta): 179.949
+    15 (QN/Block) 	Elapsed: 0.915	Loglikelihood: -3.79991e+06	(delta): 146.707
+    16 (QN/Block) 	Elapsed: 0.825	Loglikelihood: -3.79989e+06	(delta): 13.1942
+    17 (QN/Block) 	Elapsed: 0.951	Loglikelihood: -3.79989e+06	(delta): 4.60747
+    18 (QN/Block) 	Elapsed: 0.754	Loglikelihood: -3.79989e+06	(delta): 1.50012
+    19 (QN/Block) 	Elapsed: 0.777	Loglikelihood: -3.79989e+06	(delta): 0.128916
+    20 (QN/Block) 	Elapsed: 0.768	Loglikelihood: -3.79989e+06	(delta): 0.00182983
+    21 (QN/Block) 	Elapsed: 0.774	Loglikelihood: -3.79989e+06	(delta): 4.33787e-05
     Summary: 
-    Converged in 21 iterations (21.078 sec)
+    Converged in 21 iterations (20.351 sec)
     Loglikelihood: -3799887.171935
     Fst divergences between estimated populations: 
     	Pop0	Pop1	
@@ -129,13 +129,6 @@ P, Q = admixture("hapmap3/hapmap3.bed", 3)
     Pop1	0.163	
     Pop2	0.073	0.156	
     Writing output files.
-
-
-
-
-
-    ([0.99999 0.99999 0.99999; 0.946581 0.934992 0.901852; … ; 0.978953 0.982035 0.926256; 0.99999 0.993413 0.992614], [1.0e-5 0.896321 0.103669; 0.009659 0.830876 0.159465; … ; 1.0e-5 0.99998 1.0e-5; 0.004387 0.995603 1.0e-5])
-
 
 
 The `P` matrix contains estimated allele frequencies of the inferred ancestral populations.
@@ -237,7 +230,6 @@ readdir(glob"hapmap3.3.*")
 ## Detailed options
 
 The `admixture` function wraps most options for running ADMIXTURE program. The keywords closely follow those of ADMIXTURE.
-
 ```docs
 admixture
 ```

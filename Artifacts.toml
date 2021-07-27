@@ -14,7 +14,7 @@ os = "linux"
 
 [[ADMIXTURE]]
 arch = "x86_64"
-git-tree-sha1 = "7d0732a6f20d0cf8c106525a4602fc824e4cff31"
+git-tree-sha1 = "4e9c4e9d7c5c66318a2e99f29a479aee6630e4ff"
 os = "macos"
 
     [[ADMIXTURE.download]]

@@ -31,6 +31,7 @@ ADMIXTURE software. For details, see the ADMIXTUR manual
 - `qn`: secant pairs to be used in quasi-Newton acceleration; default is 3.
 - `l`: tuning parameter in penalized estimation; default is `nothing`.
 - `e`: tuning parameter in penalized estimation; default is `nothing`.
+- `supervised`: use supervised training (requires `.pop` file); default is false
 """
 function admixture(
     inputFile :: AbstractString, 
@@ -43,7 +44,8 @@ function admixture(
     c         :: Union{Nothing,Real} = nothing,
     qn        :: Union{Nothing,Integer} = nothing,
     l         :: Union{Nothing,Number} = nothing,
-    e         :: Union{Nothing,Number} = nothing
+    e         :: Union{Nothing,Number} = nothing,
+    supervised::Bool = false
     )
     inputPath = inputFile |> abspath |> normpath
     args  = sizehint!(String[], 12)
@@ -55,6 +57,7 @@ function admixture(
     isnothing(c)  || push!(args, "-c $c")
     isnothing(qn) || push!(args, qn == 0 ? "-a none" : "-a qn$qn")
     isnothing(l)  || isnothing(e) || push!(args, "-l $l", "-e $e")
+    !supervised   || push!(args, "--supervised")
     cmd  = `$ADMIXTURE_EXE $inputPath $K $args`
     @info "ADMIXTURE command:\n$cmd\n"
     @info "Output directory: $(pwd())\n"
